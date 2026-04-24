@@ -1179,49 +1179,6 @@
 
 
 
-    <!-- PAUSE OVERLAY -->
-    <div class="pause-overlay" id="pauseOverlay">
-        <div class="pause-panel">
-            <div class="pause-title">🎮 TẠM DỪNG</div>
-            <div class="pause-section">
-                <div class="pause-section-title">🔊 Âm thanh</div>
-                <div class="pause-row">
-                    <span>🎵 Nhạc nền</span>
-                    <label class="pause-toggle"><input type="checkbox" id="pause_music" checked
-                            onchange="togglePauseAudio('music')"><span class="pause-toggle-slider"></span></label>
-                </div>
-                <div class="pause-slider-row">
-                    <input type="range" id="pause_music_vol" min="0" max="100" value="70"
-                        oninput="updatePauseVol('music',this.value)">
-                    <span id="pause_music_val">70%</span>
-                </div>
-                <div class="pause-row">
-                    <span>🔈 Hiệu ứng âm</span>
-                    <label class="pause-toggle"><input type="checkbox" id="pause_sfx" checked
-                            onchange="togglePauseAudio('sfx')"><span class="pause-toggle-slider"></span></label>
-                </div>
-                <div class="pause-slider-row">
-                    <input type="range" id="pause_sfx_vol" min="0" max="100" value="70"
-                        oninput="updatePauseVol('sfx',this.value)">
-                    <span id="pause_sfx_val">70%</span>
-                </div>
-            </div>
-            <button class="pause-btn resume-btn" onclick="togglePauseMenu()">► TIẾP TỤC CHƠI</button>
-            <button class="pause-btn quit-btn" onclick="confirmQuitGame()">🚪 THOÁT GAME</button>
-        </div>
-    </div>
-
-    <!-- QUIT CONFIRM OVERLAY -->
-    <div class="quit-confirm-overlay" id="quitConfirmOverlay">
-        <div class="quit-confirm-box">
-            <h3>⚠ Xác nhận thoát</h3>
-            <p>Bạn có chắc muốn thoát? Tiến trình sẽ được lưu tự động.</p>
-            <div class="quit-confirm-btns">
-                <button class="quit-yes" onclick="executeQuit()">Thoát</button>
-                <button class="quit-no" onclick="cancelQuit()">Ở lại</button>
-            </div>
-        </div>
-    </div>
 
 </body>
 

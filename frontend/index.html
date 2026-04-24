@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,10 +16,10 @@
 
 <body>
     <!-- RELAXING BACKGROUND MUSIC -->
-    <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=ambient-piano-amp-strings-10711.mp3"></audio>
+    <audio id="bgMusic" loop
+        src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=ambient-piano-amp-strings-10711.mp3"></audio>
 
     <div class="scanlines"></div>
-
     <!-- MENU -->
     <div id="mainMenu" class="screen active">
         <div id="hp-container"></div>
@@ -313,7 +313,7 @@
                     <button class="mbtn pri" onclick="openCharacterSelect()"><span class="ico">▶</span>NEW GAME</button>
                     <button class="mbtn" onclick="continueGame()"><span class="ico">⏵</span>CONTINUE</button>
                     <div class="mdiv"></div>
-                    <button class="mbtn ai-btn" onclick="openAI()"><span class="ico">🧬</span>AI Dự Đoán Sức Khỏe</button>
+                    <button class="mbtn ai-btn" onclick="openAI()"><span class="ico">🧬</span>DỰ ĐOÁN TUỔI THỌ</button>
                     <div class="mdiv"></div>
                     <button class="mbtn sett-btn-m" onclick="openSettings()"><span class="ico">⚙</span>CÀI ĐẶT</button>
                     <button class="mbtn" onclick="openNews()"><span class="ico">📰</span>TIN TỨC</button>
@@ -321,12 +321,21 @@
                 </div>
 
                 <div class="menu-foot sidebar-foot">
+                    <a href="https://connections.rook-connect.review/client_uuid/3c802f35-20ba-45a1-8566-04a0b991421e/user_id/userID"
+                        target="_blank" style="text-decoration: none; display: block; margin-bottom: 15px;">
+                        <button
+                            style="padding: 12px 24px; font-size: 14px; font-weight: bold; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #6C5CE7, #5a4ed1); color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(108, 92, 231, 0.4); width: 100%; transition: all 0.3s ease;">
+                            🔗 Kết nối thiết bị sức khỏe
+                        </button>
+                    </a>
                     <p>v7.0 · STORY + AI HEALTH + SETTINGS</p>
                     <div class="social-links">
-                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="tk" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="tk"
+                            title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                         <a href="https://www.youtube.com/watch?v=dYB7VcezE_0" class="yt" title="YouTube" target="_blank"
                             rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="fb" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="fb"
+                            title="Facebook"><i class="fa-brands fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
@@ -337,15 +346,22 @@
 
     <!-- APP CONTENT SCREEN -->
     <div id="appContentScreen" class="screen" style="overflow-y:auto; flex-direction:column; background:#0b0e14;">
-        <button class="news-back-btn" onclick="backToMenu()">QUAY LẠI MENU</button>
+        <button class="news-back-btn" onclick="backToMenu()">◄ QUAY LẠI TRANG CHỦ</button>
         <div class="ac-section"
             style="padding: 100px 20px 120px; min-height:100vh; position:relative; overflow:visible;">
             <div class="ac-header">
                 <h2>GIỚI THIỆU <span>CÔNG NGHỆ AI</span></h2>
-                <p style="max-width: 900px; margin: 15px auto 0; font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.85); text-align: justify;">
-                    "If You Fall" là dự án tiên phong <b>đánh mạnh vào nhận thức người dùng</b> và mang <b>tính lan tỏa cộng đồng cao</b>. Chúng tôi ứng dụng công nghệ Trí Tuệ Nhân Tạo (AI) vào việc giáo dục và phòng ngừa các bệnh lý nguy hiểm mang tính thời đại: <b>Đột quỵ</b> và <b>Nhồi máu cơ tim</b>. 
+                <p
+                    style="max-width: 900px; margin: 15px auto 0; font-size: 16px; line-height: 1.8; color: rgba(255, 255, 255, 0.85); text-align: justify;">
+                    "If You Fall" là dự án tiên phong <b>đánh mạnh vào nhận thức người dùng</b> và mang <b>tính lan tỏa
+                        cộng đồng cao</b>. Chúng tôi ứng dụng công nghệ Trí Tuệ Nhân Tạo (AI) vào việc giáo dục và phòng
+                    ngừa các bệnh lý nguy hiểm mang tính thời đại: <b>Đột quỵ</b> và <b>Nhồi máu cơ tim</b>.
                     <br><br>
-                    Thay vì những lời khuyên y tế sáo rỗng, hệ thống mô phỏng thực tế hậu quả khôn lường của những thói quen tưởng chừng vô hại như: tắm đêm, thức trắng cày deadline, lạm dụng chất kích thích hay nhịn ăn liên tục. Thông qua 3 trụ cột công nghệ cốt lõi: <b>Công cụ Phân tích rủi ro Đột quỵ bằng AI</b>, <b>Môi trường giả lập sinh tồn tương tác 100%</b>, và <b>Chatbot Bác Sĩ Cấp Cứu Trực Tuyến</b>, chúng tôi trao cho bạn cơ hội nhìn thấy "tương lai" sức khỏe của chính mình trước khi quá muộn.
+                    Thay vì những lời khuyên y tế sáo rỗng, hệ thống mô phỏng thực tế hậu quả khôn lường của những thói
+                    quen tưởng chừng vô hại như: tắm đêm, thức trắng cày deadline, lạm dụng chất kích thích hay nhịn ăn
+                    liên tục. Thông qua 3 trụ cột công nghệ cốt lõi: <b>Công cụ Phân tích rủi ro Đột quỵ bằng AI</b>,
+                    <b>Môi trường giả lập sinh tồn tương tác 100%</b>, và <b>Chatbot Bác Sĩ Cấp Cứu Trực Tuyến</b>,
+                    chúng tôi trao cho bạn cơ hội nhìn thấy "tương lai" sức khỏe của chính mình trước khi quá muộn.
                 </p>
             </div>
             <!-- Premium Upgrade -->
@@ -464,7 +480,8 @@
                 <div class="premium-card">
                     <div class="premium-icon"><i class="fa-solid fa-brain"></i></div>
                     <h3>AI Tầm Soát Đột Quỵ</h3>
-                    <p>Hệ thống học máy phân tích sâu vào các thói quen cực đoan (như tắm đêm, thức khuya, stress mãn tính) kết hợp với bệnh lý tim mạch để đưa ra mức độ cảnh báo Đột quỵ.</p>
+                    <p>Hệ thống học máy phân tích sâu vào các thói quen cực đoan (như tắm đêm, thức khuya, stress mãn
+                        tính) kết hợp với bệnh lý tim mạch để đưa ra mức độ cảnh báo Đột quỵ.</p>
                     <button class="ac-btn-premium" onclick="this.nextElementSibling.classList.toggle('open')">CHI TIẾT
                         <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></button>
                     <div class="details-content">
@@ -475,14 +492,16 @@
                             <li>Báo cáo kết quả trực quan dưới dạng chỉ số rủi ro (%) và phác đồ.</li>
                         </ul>
                         <button onclick="openAI()"
-                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">TẦM SOÁT NGAY <i class="fa-solid fa-stethoscope"></i></button>
+                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">TẦM
+                            SOÁT NGAY <i class="fa-solid fa-stethoscope"></i></button>
                     </div>
                 </div>
 
                 <div class="premium-card">
                     <div class="premium-icon"><i class="fa-solid fa-gamepad"></i></div>
                     <h3>Mô phỏng 4 Số phận</h3>
-                    <p>Nhập vai vào 4 nhân vật (Minh, Lan, Hùng, Khánh) với những gánh nặng tài chính, nợ nần và hoàn cảnh sống khác biệt. Trải nghiệm cảm giác đánh đổi sinh mệnh lấy đồng tiền.</p>
+                    <p>Nhập vai vào 4 nhân vật (Minh, Lan, Hùng, Khánh) với những gánh nặng tài chính, nợ nần và hoàn
+                        cảnh sống khác biệt. Trải nghiệm cảm giác đánh đổi sinh mệnh lấy đồng tiền.</p>
                     <button class="ac-btn-premium" onclick="this.nextElementSibling.classList.toggle('open')">CHI TIẾT
                         <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></button>
                     <div class="details-content">
@@ -492,14 +511,16 @@
                             <li>Mô phỏng tình trạng "Kiệt sức cơ thể" (Fatigue) dẫn đến sốc nhiệt.</li>
                         </ul>
                         <button onclick="openCharacterSelect()"
-                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">CHƠI GAME NGAY <i class="fa-solid fa-play"></i></button>
+                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">CHƠI
+                            GAME NGAY <i class="fa-solid fa-play"></i></button>
                     </div>
                 </div>
 
                 <div class="premium-card">
                     <div class="premium-icon"><i class="fa-solid fa-user-doctor"></i></div>
                     <h3>Bác Sĩ Trực Tuyến AI</h3>
-                    <p>Trợ lý y tế thông minh ảo hoạt động 24/7, được huấn luyện để phản ứng với các dấu hiệu nhận biết (F.A.S.T) của đột quỵ não và nhồi máu cơ tim cấp.</p>
+                    <p>Trợ lý y tế thông minh ảo hoạt động 24/7, được huấn luyện để phản ứng với các dấu hiệu nhận biết
+                        (F.A.S.T) của đột quỵ não và nhồi máu cơ tim cấp.</p>
                     <button class="ac-btn-premium" onclick="this.nextElementSibling.classList.toggle('open')">CHI TIẾT
                         <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></button>
                     <div class="details-content">
@@ -509,7 +530,30 @@
                             <li>Hướng dẫn sơ cứu khẩn cấp từng bước chờ xe cứu thương.</li>
                         </ul>
                         <button onclick="openChat()"
-                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">TRÒ CHUYỆN VỚI AI <i class="fa-solid fa-comment"></i></button>
+                            style="margin-top:15px; padding: 10px 20px; background: #00d4b4; color: #000; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%;">TRÒ
+                            CHUYỆN VỚI AI <i class="fa-solid fa-comment"></i></button>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="premium-icon"><i class="fa-solid fa-watch"></i></div>
+                    <h3>Kết Nối Thiết Bị Wearable Thông Minh</h3>
+                    <p>Tích hợp seamless với Apple Watch, Smartwatch, và các thiết bị đeo thông minh khác để giám sát
+                        sức khỏe theo thời gian thực, theo dõi nhịp tim và phát hiện các dấu hiệu bất thường.</p>
+                    <button class="ac-btn-premium" onclick="this.nextElementSibling.classList.toggle('open')">CHI TIẾT
+                        <i class="fa-solid fa-arrow-down" style="margin-left: 5px;"></i></button>
+                    <div class="details-content">
+                        <strong style="color: #ffcc00;">TÍNH NĂNG GIÁM SÁT TOÀN DIỆN:</strong>
+                        <ul>
+                            <li>Đồng bộ dữ liệu nhịp tim, oxy máu (SpO₂), và bước chân trong ngày.</li>
+                            <li>Cảnh báo tức thì khi phát hiện nhịp tim bất thường hoặc quá cao.</li>
+                            <li>Hỗ trợ Apple Watch Series 4+, Samsung Galaxy Watch, Fitbit, Garmin.</li>
+                            <li>Báo cáo sức khỏe chi tiết hàng ngày, hàng tuần, hàng tháng.</li>
+                        </ul>
+                        <a href="https://connections.rook-connect.review/client_uuid/3c802f35-20ba-45a1-8566-04a0b991421e/user_id/userID"
+                            target="_blank"
+                            style="margin-top:15px; display:block; padding: 10px 20px; background: #6C5CE7; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; text-align:center; text-decoration:none;">🔗
+                            KẾT NỐI NGAY <i class="fa-solid fa-link"></i></a>
                     </div>
                 </div>
             </div>
@@ -520,6 +564,9 @@
     <div id="storyScreen" class="screen">
         <canvas id="storyBg" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
         <canvas id="pixelIntroCanvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:10"></canvas>
+        <button id="storySkipBtn" class="story-skip-btn" onclick="skipStoryIntro()" style="display:none">SKIP ⏭</button>
+        <button id="storyStartBtn" class="story-start-btn" onclick="startGameFromStory()" style="display:none">▶ BẮT
+            ĐẦU</button>
         <div class="story-box" id="storyBox">
             <div class="story-scroll" id="storyScroll"></div>
             <div class="story-controls" id="storyControls"></div>
@@ -542,8 +589,23 @@
                 </div>
             </div>
 
-            <!-- Bottom Left: D-Pad Omitted -->
-            <!-- Bottom Right: Action Button Omitted -->
+            <!-- Mobile Touch Controls (hidden on desktop via CSS) -->
+            <div class="mobile-controls-panel" id="mobileControlsPanel">
+                <div class="mcp-move">
+                    <div class="mcp-label">Di chuyển</div>
+                    <div class="mcp-dpad">
+                        <button class="mcp-btn" id="btnUp">▲</button>
+                        <button class="mcp-btn" id="btnLeft">◄</button>
+                        <button class="mcp-btn mcp-empty"></button>
+                        <button class="mcp-btn" id="btnRight">►</button>
+                        <button class="mcp-btn" id="btnDown">▼</button>
+                    </div>
+                </div>
+                <div class="mcp-actions">
+                    <button class="mcp-act-btn" id="btnInteract">🔄 Tương tác</button>
+                    <button class="mcp-act-btn mcp-menu-btn" id="btnMenu">☰ Menu</button>
+                </div>
+            </div>
         </div>
 
         <div class="road-hazard" id="roadHazard"
@@ -654,7 +716,8 @@
                                 <div class="bv" id="weightV" style="color:#fcd34d;">100.0 kg</div>
                             </div>
                             <div class="bw" style="background:rgba(245,158,11,0.2);">
-                                <div class="bf" id="weightB" style="width:100%; background:#f59e0b; transition: width 0.5s;"></div>
+                                <div class="bf" id="weightB"
+                                    style="width:100%; background:#f59e0b; transition: width 0.5s;"></div>
                             </div>
                         </div>
                     </div>
@@ -672,29 +735,146 @@
         </div>
         <div class="game-main">
             <canvas id="gameCanvas" width="1200" height="620"></canvas>
-            
+
             <!-- Gym Progress Overlay -->
-            <div id="gymProgressOverlay" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.8); border:2px solid #34d399; border-radius:12px; padding:20px; z-index:10000; text-align:center; min-width:300px; box-shadow:0 0 20px rgba(52,211,153,0.5);">
-                <div style="font-size:24px; color:#34d399; margin-bottom:10px; font-weight:bold;"><i class="fas fa-dumbbell"></i> ĐANG TẬP GYM...</div>
-                <div style="width:100%; height:20px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-                    <div id="gymProgressBar" style="width:0%; height:100%; background:linear-gradient(90deg, #10b981, #34d399); transition: width 0.1s linear;"></div>
+            <div id="gymProgressOverlay"
+                style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.8); border:2px solid #34d399; border-radius:12px; padding:20px; z-index:10000; text-align:center; min-width:300px; box-shadow:0 0 20px rgba(52,211,153,0.5);">
+                <div style="font-size:24px; color:#34d399; margin-bottom:10px; font-weight:bold;"><i
+                        class="fas fa-dumbbell"></i> ĐANG TẬP GYM...</div>
+                <div
+                    style="width:100%; height:20px; background:rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
+                    <div id="gymProgressBar"
+                        style="width:0%; height:100%; background:linear-gradient(90deg, #10b981, #34d399); transition: width 0.1s linear;">
+                    </div>
                 </div>
                 <div id="gymProgressText" style="margin-top:10px; color:#fff; font-size:14px;">Đốt mỡ: 0.0 kg</div>
             </div>
             <!-- Mission Board -->
-            <div id="missionBoard" style="display:none; position:absolute; bottom:10px; left:10px; width:280px; max-height:200px; background:linear-gradient(135deg, rgba(10,14,24,0.95), rgba(15,20,35,0.92)); border:1px solid rgba(122,173,255,0.3); border-radius:12px; padding:10px 12px; z-index:50; font-family:'Inter',sans-serif; overflow-y:auto; box-shadow:0 4px 20px rgba(0,0,0,0.6);">
+            <div id="missionBoard"
+                style="display:none; position:absolute; bottom:10px; left:10px; width:280px; max-height:200px; background:linear-gradient(135deg, rgba(10,14,24,0.95), rgba(15,20,35,0.92)); border:1px solid rgba(122,173,255,0.3); border-radius:12px; padding:10px 12px; z-index:50; font-family:'Inter',sans-serif; overflow-y:auto; box-shadow:0 4px 20px rgba(0,0,0,0.6);">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-                    <span style="font-size:11px;font-weight:900;color:#7aadff;letter-spacing:1px;">📋 NHIỆM VỤ CHÍNH</span>
-                    <span id="missionToggle" onclick="toggleMissionBoard()" style="cursor:pointer;font-size:10px;color:#aaa;">▼</span>
+                    <span style="font-size:11px;font-weight:900;color:#7aadff;letter-spacing:1px;">📋 NHIỆM VỤ
+                        CHÍNH</span>
+                    <span id="missionToggle" onclick="toggleMissionBoard()"
+                        style="cursor:pointer;font-size:10px;color:#aaa;">▼</span>
                 </div>
                 <div id="missionList" style="font-size:11px;color:#ddd;line-height:1.7;"></div>
             </div>
-            <button class="g-back" onclick="backToMenu()">← MENU</button>
+            <button class="g-back" onclick="backToMenu()">◄ MENU CHÍNH</button>
+
+            <!-- MOBILE CONTROLS (Visible only on tablet/phone) -->
+            <div id="mobileControls" class="mobile-controls-panel">
+                <!-- D-Pad for Movement -->
+                <div class="dpad-container">
+                    <div class="dpad-title">Di chuyển</div>
+                    <div class="dpad">
+                        <!-- Up Button -->
+                        <button class="dpad-btn dpad-up" id="btnUp" data-key="w" title="Lên (W)">
+                            <i class="fas fa-arrow-up"></i>
+                        </button>
+
+                        <!-- Left, Center, Right Row -->
+                        <div class="dpad-row">
+                            <button class="dpad-btn dpad-left" id="btnLeft" data-key="a" title="Trái (A)">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <div class="dpad-center"></div>
+                            <button class="dpad-btn dpad-right" id="btnRight" data-key="d" title="Phải (D)">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Down Button -->
+                        <button class="dpad-btn dpad-down" id="btnDown" data-key="s" title="Xuống (S)">
+                            <i class="fas fa-arrow-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons-container">
+                    <!-- Interact Button -->
+                    <button class="action-btn interact-btn" id="btnInteract" data-key="e" title="Tương tác (E)">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Tương tác</span>
+                    </button>
+
+                    <!-- Menu Button -->
+                    <button class="action-btn menu-btn" id="btnMenu" data-key="escape" title="Menu (ESC)">
+                        <i class="fas fa-bars"></i>
+                        <span>Menu</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="itip" id="itip">[ E ] TƯƠNG TÁC</div>
     <div class="chint">WASD: Di chuyển · E: Tương tác · ESC: Menu · ⏳ Thời gian theo giờ</div>
     <div class="vig" id="vig"></div>
+
+    <!-- PAUSE MENU OVERLAY -->
+    <div id="pauseOverlay" class="pause-overlay">
+        <div class="pause-panel">
+            <div class="pause-header">
+                <span class="pause-icon">⏸</span>
+                <h2>TẠM DỪNG</h2>
+            </div>
+            <div class="pause-settings">
+                <div class="pause-setting-row">
+                    <span class="pause-setting-label">🎵 Nhạc nền</span>
+                    <label class="pause-toggle">
+                        <input type="checkbox" id="pause_music" checked onchange="togglePauseAudio('music')">
+                        <span class="pause-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="pause-setting-row pause-vol-row" id="pauseMusicVolRow">
+                    <input type="range" min="0" max="100" value="70" class="pause-slider" id="pause_music_vol"
+                        oninput="updatePauseVol('music', this.value)">
+                    <span class="pause-vol-label" id="pause_music_val">70%</span>
+                </div>
+                <div class="pause-setting-row">
+                    <span class="pause-setting-label">🔊 Hiệu ứng âm</span>
+                    <label class="pause-toggle">
+                        <input type="checkbox" id="pause_sfx" checked onchange="togglePauseAudio('sfx')">
+                        <span class="pause-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="pause-setting-row pause-vol-row" id="pauseSfxVolRow">
+                    <input type="range" min="0" max="100" value="70" class="pause-slider" id="pause_sfx_vol"
+                        oninput="updatePauseVol('sfx', this.value)">
+                    <span class="pause-vol-label" id="pause_sfx_val">70%</span>
+                </div>
+            </div>
+            <div class="pause-actions">
+                <button class="pause-btn pause-btn-resume" onclick="togglePauseMenu()">
+                    <span>▶</span> TIẾP TỤC CHƠI
+                </button>
+                <button class="pause-btn pause-btn-quit" onclick="confirmQuitGame()">
+                    <span>🚪</span> THOÁT GAME
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUIT CONFIRMATION -->
+    <div id="quitConfirmOverlay" class="quit-confirm-overlay">
+        <div class="quit-confirm-box">
+            <div class="quit-confirm-icon">⚠️</div>
+            <h3>BẠN CÓ CHẮC MUỐN THOÁT?</h3>
+            <p>Tiến trình hiện tại sẽ được lưu lại.</p>
+            <div class="quit-confirm-btns">
+                <button class="pause-btn pause-btn-resume" onclick="cancelQuit()">
+                    <span>✖</span> HỦY
+                </button>
+                <button class="pause-btn pause-btn-quit" onclick="executeQuit()">
+                    <span>🚪</span> THOÁT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIXEL FADE OVERLAY -->
+    <canvas id="pixelFadeCanvas" class="pixel-fade-canvas"></canvas>
 
     <!-- NPC Dialogue overlay -->
     <div class="dialogue-overlay" id="npcDialogueOverlay">
@@ -725,7 +905,7 @@
 
     <!-- NEWS SCREEN -->
     <div id="newsScreen" class="screen">
-        <button class="news-back-btn" onclick="backToMenu()">BACK TO MENU</button>
+        <button class="news-back-btn" onclick="backToMenu()">◄ QUAY LẠI TRANG CHỦ</button>
         <div class="news-screen-wrap">
             <div class="news-header">
                 <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
@@ -733,7 +913,10 @@
                         <h2 id="newsTitle">TIN TỨC & <span>Y HỌC</span></h2>
                         <p id="newsSub">Cập nhật những thông tin y tế và sức khỏe mới nhất</p>
                     </div>
-                    <button onclick="renderNews()" style="background:#00d4b4; color:#000; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; transition:all 0.3s; box-shadow:0 0 10px rgba(0,212,180,0.4);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i class="fa-solid fa-rotate-right"></i> TẢI LẠI BÁO MỚI</button>
+                    <button onclick="renderNews()"
+                        style="background:#00d4b4; color:#000; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; transition:all 0.3s; box-shadow:0 0 10px rgba(0,212,180,0.4);"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"><i
+                            class="fa-solid fa-rotate-right"></i> TẢI LẠI BÁO MỚI</button>
                 </div>
             </div>
             <div class="news-grid" id="newsGrid">
@@ -744,280 +927,142 @@
 
     <!-- LỚP BẢO VỆ 1: AI DISCLAIMER MODAL -->
     <div id="aiDisclaimerModal" class="emergency-overlay">
-        <div style="background:linear-gradient(135deg,#0a0e1a,#1a0a0a);border:2px solid #cc2222;border-radius:16px;padding:30px;max-width:500px;width:90vw;box-shadow:0 0 60px rgba(200,30,30,0.4);position:relative;font-family:'Inter',sans-serif;text-align:center;">
+        <div
+            style="background:linear-gradient(135deg,#0a0e1a,#1a0a0a);border:2px solid #cc2222;border-radius:16px;padding:30px;max-width:500px;width:90vw;box-shadow:0 0 60px rgba(200,30,30,0.4);position:relative;font-family:'Inter',sans-serif;text-align:center;">
             <div style="font-size:48px;margin-bottom:15px;text-shadow:0 0 20px rgba(200,30,30,0.8);">⚠️</div>
-            <h2 style="color:#ff4444;font-size:24px;font-weight:900;margin-bottom:15px;letter-spacing:1px;">CẢNH BÁO Y TẾ</h2>
+            <h2 style="color:#ff4444;font-size:24px;font-weight:900;margin-bottom:15px;letter-spacing:1px;">CẢNH BÁO Y
+                TẾ</h2>
             <p style="color:#ddd;font-size:14px;line-height:1.6;margin-bottom:25px;">
-                Mô phỏng AI này <b>KHÔNG PHẢI CHẨN ĐOÁN Y KHOA</b>. Nội dung chỉ mang tính chất tham khảo, không thể thay thế việc thăm khám bệnh trực tiếp với bác sĩ chuyên khoa. Trong trường hợp khẩn cấp, vui lòng gọi ngay 115.
+                Mô phỏng AI này <b>KHÔNG PHẢI CHẨN ĐOÁN Y KHOA</b>. Nội dung chỉ mang tính chất tham khảo, không thể
+                thay thế việc thăm khám bệnh trực tiếp với bác sĩ chuyên khoa. Trong trường hợp khẩn cấp, vui lòng gọi
+                ngay 115.
             </p>
-            <label style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.05);padding:15px;border-radius:8px;cursor:pointer;margin-bottom:25px;text-align:left;border:1px solid rgba(255,255,255,0.1);">
-                <input type="checkbox" id="disclaimerCheck" onchange="toggleAIDisclaimerBtn()" style="width:20px;height:20px;margin-top:2px;accent-color:#cc2222;cursor:pointer;">
-                <span style="color:#aaa;font-size:13px;line-height:1.4;">Tôi đã đọc, hiểu và đồng ý không dùng công cụ này thay thế bác sĩ.</span>
+            <label
+                style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.05);padding:15px;border-radius:8px;cursor:pointer;margin-bottom:25px;text-align:left;border:1px solid rgba(255,255,255,0.1);">
+                <input type="checkbox" id="disclaimerCheck" onchange="toggleAIDisclaimerBtn()"
+                    style="width:20px;height:20px;margin-top:2px;accent-color:#cc2222;cursor:pointer;">
+                <span style="color:#aaa;font-size:13px;line-height:1.4;">Tôi đã đọc, hiểu và đồng ý không dùng công cụ
+                    này thay thế bác sĩ.</span>
             </label>
             <div style="display:flex;gap:15px;">
-                <button onclick="closeAIDisclaimer()" style="flex:1;background:transparent;border:1px solid #666;color:#ccc;padding:12px;border-radius:8px;font-weight:bold;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">HỦY BỎ</button>
-                <button id="disclaimerBtn" onclick="agreeAIDisclaimer()" disabled style="flex:1;background:#cc2222;border:none;color:#fff;padding:12px;border-radius:8px;font-weight:bold;cursor:not-allowed;opacity:0.5;transition:all 0.2s;">TIẾP TỤC</button>
+                <button onclick="closeAIDisclaimer()"
+                    style="flex:1;background:transparent;border:1px solid #666;color:#ccc;padding:12px;border-radius:8px;font-weight:bold;cursor:pointer;transition:all 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.1)'"
+                    onmouseout="this.style.background='transparent'">HỦY BỎ</button>
+                <button id="disclaimerBtn" onclick="agreeAIDisclaimer()" disabled
+                    style="flex:1;background:#cc2222;border:none;color:#fff;padding:12px;border-radius:8px;font-weight:bold;cursor:not-allowed;opacity:0.5;transition:all 0.2s;">TIẾP
+                    TỤC</button>
             </div>
         </div>
     </div>
 
-    <!-- AI -->
+    <!-- AI LIFE EXPECTANCY PREDICTOR -->
     <div id="aiScreen" class="screen">
-        <!-- LỚP BẢO VỆ 2: STICKY BANNER -->
-        <div style="position: fixed; top: 0; left: 0; width: 100%; background: #cc2222; color: #fff; z-index: 100000; padding: 10px 20px; font-weight: bold; text-align: center; box-shadow: 0 4px 15px rgba(200, 30, 30, 0.6); font-family: 'Inter', sans-serif; display: flex; flex-direction: column; gap: 4px;">
-            <div style="font-size: 13px; letter-spacing: 1px; text-transform: uppercase;">⚠️ Mô phỏng AI Không phải chẩn đoán y khoa!</div>
-            <div style="font-size: 11px; font-weight: normal; color: rgba(255,255,255,0.9);">Trong trường hợp khẩn cấp, VUI LÒNG GỌI NGAY: 📞 <a href="tel:115" style="color:#ffeb3b;text-decoration:none;font-weight:bold;padding:0 5px;">115 (Cấp cứu)</a> hoặc 📞 <a href="tel:113" style="color:#ffeb3b;text-decoration:none;font-weight:bold;padding:0 5px;">113 (Công an)</a></div>
+        <div
+            style="position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#cc2222,#991111);color:#fff;z-index:100000;padding:10px 20px;font-weight:bold;text-align:center;box-shadow:0 4px 15px rgba(200,30,30,0.6);font-family:'Inter',sans-serif;">
+            <div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;">⚠️ Mô phỏng thống kê — Không phải
+                chẩn đoán y khoa!</div>
         </div>
 
-        <button class="news-back-btn" style="top: 75px; z-index: 99999;" onclick="backToMenu()">QUAY LẠI MENU</button>
+        <button class="news-back-btn" style="top:55px;z-index:99999;" onclick="backToMenu()">◄ QUAY LẠI</button>
+
         <div class="ai-left">
             <div class="ai-header">
-                <div class="ai-tag">HEALTH MONITOR AI · v2.4</div>
+                <div class="ai-tag">HEALTH PREDICTOR · AI v3.0</div>
                 <h2>DỰ ĐOÁN TUỔI THỌ</h2>
-                <p>Nhập thông tin lối sống để AI phân tích và dự đoán tuổi thọ ước tính.</p>
+                <p>Nhập thông tin để AI phân tích và ước tính tuổi thọ dựa trên mô hình thống kê.</p>
             </div>
             <div class="ai-form-area">
                 <div class="ai-section">
                     <div class="ai-section-title">THÔNG TIN CƠ BẢN</div>
-                    <div class="ai-field"><label id="lbl_ai_age">TUỔI HIỆN TẠI</label><input type="number" id="ai_age"
-                            value="30" min="1" max="120"
-                            onblur="if(this.value<1)this.value=1;if(this.value>120)this.value=120;"></div>
-                    <div class="ai-field"><label id="lbl_ai_job">NGHỀ NGHIỆP HIỆN TẠI</label>
-                        <select id="ai_job">
-                            <option value="ky_thuat">Nhóm Kỹ thuật (Sản xuất, Sửa chữa, Xây dựng...)</option>
-                            <option value="nghiep_vu">Nhóm Nghiệp vụ (Hành chính, Kế toán, Lập trình...)</option>
-                            <option value="xa_hoi">Nhóm Xã hội (Giáo dục, Y tế, Phục vụ cộng đồng...)</option>
-                            <option value="quan_ly">Nhóm Quản lý (Doanh nhân, Quản lý dự án, Giám đốc...)</option>
-                            <option value="khoa_hoc">Nhóm Khoa học (Nghiên cứu, Phân tích, Y dược...)</option>
-                            <option value="nghe_thuat">Nhóm Nghệ thuật (Sáng tạo, Thiết kế, Truyền thông...)</option>
-                            <option value="lao_dong_nang">Nhóm Lao động chân tay (Thợ mỏ, Nông nghiệp, Bốc vác...)
-                            </option>
-                            <option value="khong_co" style="color:#ffaa00;font-weight:bold;">Chưa có nghề nghiệp / Thất nghiệp / Nghỉ hưu</option>
-                        </select>
-                    </div>
-
-                </div>
-                <div class="ai-section">
-                    <div class="ai-section-title">CHỈ SỐ THỂ TRẠNG</div>
-                    <div class="ai-field"><label id="lbl_ai_gender">GIỚI TÍNH</label>
+                    <div class="ai-field"><label>TUỔI HIỆN TẠI</label><input type="number" id="ai_age" value="30"
+                            min="1" max="120"></div>
+                    <div class="ai-field"><label>GIỚI TÍNH</label>
                         <select id="ai_gender">
                             <option value="male">Nam</option>
                             <option value="female">Nữ</option>
+                            <option value="other">Khác</option>
                         </select>
                     </div>
-                    <div class="ai-field"><label id="lbl_ai_height">CHIỀU CAO (cm)</label><input type="number"
-                            id="ai_height" value="170" min="50" max="250"
-                            onblur="if(this.value<50)this.value=50;if(this.value>250)this.value=250;calcBMI()"
-                            oninput="calcBMI()"></div>
-                    <div class="ai-field"><label id="lbl_ai_weight">CÂN NẶNG (kg)</label><input type="number"
-                            id="ai_weight" value="65" min="10" max="300"
-                            onblur="if(this.value<10)this.value=10;if(this.value>300)this.value=300;calcBMI()"
-                            oninput="calcBMI()"></div>
-                    <div class="ai-field"><label id="lbl_ai_bmi">BMI (kg/m²)</label><input type="text" id="ai_bmi"
-                            value="22.5" readonly
-                            style="background:rgba(255,255,255,0.05);color:#2979ff;font-weight:bold"></div>
+                    <div class="ai-field"><label>QUỐC GIA</label><input type="text" id="ai_country" value="Việt Nam">
+                    </div>
                 </div>
                 <div class="ai-section">
-                    <div class="ai-section-title">CHỈ SỐ Y TẾ KHÁCH QUAN</div>
-                    <div class="ai-field"><label>HUYẾT ÁP (Blood Pressure)</label>
-                        <select id="ai_blood_pressure">
-                            <option value="1" selected>Rất tốt / Bình thường (90/60 – 120/80 mmHg)</option>
-                            <option value="0">Bình thường cao (120/80 – 129/84 mmHg)</option>
-                            <option value="-1">Tiền tăng huyết áp (130/85 – 139/89 mmHg)</option>
-                            <option value="-3">Tăng huyết áp độ 1 (140/90 – 159/99 mmHg)</option>
-                            <option value="-6">Tăng huyết áp độ 2 (160/100 – 179/109 mmHg)</option>
-                            <option value="-10">Cơn tăng huyết áp khẩn cấp (≥180/110 mmHg)</option>
-                            <option value="-2">Huyết áp thấp (&lt;90/60 mmHg — thường xuyên chóng mặt)</option>
-                            <option value="0">Chưa từng đo / Không rõ</option>
+                    <div class="ai-section-title">CHỈ SỐ THỂ TRẠNG</div>
+                    <div class="ai-field"><label>CHIỀU CAO (cm)</label><input type="number" id="ai_height" value="170"
+                            min="50" max="250" oninput="calcBMI()"></div>
+                    <div class="ai-field"><label>CÂN NẶNG (kg)</label><input type="number" id="ai_weight" value="65"
+                            min="10" max="300" oninput="calcBMI()"></div>
+                    <div class="ai-field"><label>BMI (tự động)</label><input type="text" id="ai_bmi" value="22.5"
+                            readonly style="background:rgba(255,255,255,0.05);color:#00d4b4;font-weight:bold"></div>
+                </div>
+                <div class="ai-section">
+                    <div class="ai-section-title">LỐI SỐNG</div>
+                    <div class="ai-field"><label>🚬 MỨC ĐỘ HÚT THUỐC</label>
+                        <select id="ai_smoking">
+                            <option value="none">Không hút</option>
+                            <option value="light">Hút nhẹ (thỉnh thoảng)</option>
+                            <option value="heavy">Hút nặng (hàng ngày)</option>
                         </select>
                     </div>
-                    <div class="ai-field"><label>ĐƯỜNG HUYẾT LÚC ĐÓI (Glucose)</label>
-                        <select id="ai_blood_sugar">
-                            <option value="1" selected>Rất tốt / Bình thường (3.9 – 5.5 mmol/L)</option>
-                            <option value="0">Bình thường cao (5.6 – 6.0 mmol/L)</option>
-                            <option value="-2">Tiền tiểu đường (6.1 – 6.9 mmol/L)</option>
-                            <option value="-4">Tiểu đường nhẹ (&gt;7.0 mmol/L, kiểm soát được)</option>
-                            <option value="-7">Tiểu đường nặng (&gt;10.0 mmol/L, kiểm soát kém)</option>
-                            <option value="-2">Hay bị hạ đường huyết (&lt;3.9 mmol/L)</option>
-                            <option value="0">Chưa từng đo / Không rõ</option>
+                    <div class="ai-field"><label>🍺 MỨC ĐỘ UỐNG RƯỢU BIA</label>
+                        <select id="ai_alcohol">
+                            <option value="low">Ít / Không uống</option>
+                            <option value="medium">Trung bình (vài lần/tuần)</option>
+                            <option value="high">Nhiều (hàng ngày)</option>
                         </select>
                     </div>
-                    <div class="ai-field"><label>NHỊP TIM TĨNH (Resting Heart Rate)</label>
-                        <select id="ai_heart_rate">
-                            <option value="2" selected>Rất tốt (60 - 75 nhịp/phút)</option>
-                            <option value="0">Bình thường (76 - 85 nhịp/phút)</option>
-                            <option value="-2">Hơi cao (86 - 95 nhịp/phút)</option>
-                            <option value="-5">Nhanh (&gt;100 nhịp/phút trong lúc nghỉ ngơi)</option>
-                            <option value="-3">Chậm dị thường (&lt;50 nhịp/phút, không phải VĐV)</option>
-                            <option value="0">Chưa từng đo / Không rõ</option>
-                        </select>
-                    </div>
-                    <div class="ai-field"><label>CHỈ SỐ MỠ MÁU (Cholesterol/Triglyceride)</label>
-                        <select id="ai_cholesterol">
-                            <option value="1" selected>Rất tốt (Dưới mức bình thường)</option>
-                            <option value="0">Bình thường</option>
-                            <option value="-3">Hơi cao (Cần điều chỉnh ăn uống)</option>
-                            <option value="-7">Rất cao (Đang dùng thuốc hoặc mỡ máu cao báo động)</option>
-                            <option value="0">Chưa từng xét nghiệm / Không rõ</option>
+                    <div class="ai-field"><label>🏃 MỨC ĐỘ TẬP THỂ DỤC</label>
+                        <select id="ai_exercise">
+                            <option value="low">Ít vận động</option>
+                            <option value="medium" selected>Trung bình (3-4 lần/tuần)</option>
+                            <option value="high">Cao (hàng ngày)</option>
                         </select>
                     </div>
                 </div>
                 <div class="ai-section">
-                    <div class="ai-section-title">TIỀN SỬ TIM MẠCH & BỆNH LÝ</div>
-                    <div class="ai-field"><label>BỆNH MẠN TÍNH ĐANG MẮC</label>
-                        <div class="ai-check-group" id="ai_chronic">
-                            <div class="ai-check" data-val="tim_mach" onclick="toggleCheck(this)">🫀 Bệnh Tim Mạch (Suy tim/Mạch vành)</div>
-                            <div class="ai-check" data-val="huyet_ap" onclick="toggleCheck(this)">🩸 Tăng Huyết Áp</div>
-                            <div class="ai-check" data-val="tieu_duong" onclick="toggleCheck(this)">🩸 Tiểu đường (Đái tháo đường)</div>
-                            <div class="ai-check" data-val="mo_mau" onclick="toggleCheck(this)">🛢️ Mỡ máu cao (Rối loạn Lipid máu)</div>
-                            <div class="ai-check" data-val="roi_loan_nhip_tim" onclick="toggleCheck(this)">💓 Rối loạn nhịp tim / Rung nhĩ</div>
-                        </div>
+                    <div class="ai-section-title">BỆNH LÝ</div>
+                    <div class="ai-field" style="display:flex;align-items:center;justify-content:space-between">
+                        <label style="margin:0">🩸 TIỂU ĐƯỜNG</label>
+                        <label class="pause-toggle"><input type="checkbox" id="ai_diabetes"><span
+                                class="pause-toggle-slider"></span></label>
                     </div>
-                    <div class="ai-field"><label>TIỀN SỬ GIA ĐÌNH (Bố, Mẹ, Anh Chị Em Ruột)</label>
-                        <select id="ai_surgery">
-                            <option value="none">Không có ai mắc bệnh lý nghiêm trọng</option>
-                            <option value="minor">Có người mắc Huyết áp cao / Tiểu đường</option>
-                            <option value="major" style="color:#ff6b6b;font-weight:bold;">Từng có người bị ĐỘT QUỴ hoặc Nhồi Máu Cơ Tim</option>
-                        </select>
-                    </div>
-                    <div class="ai-field"><label>GHI CHÚ THÊM BỆNH LÝ CỤ THỂ (NẾU CÓ)</label>
-                        <input type="text" id="ai_surgery_detail" placeholder="Vui lòng ghi rõ..."
-                            style="margin-top:2px">
+                    <div class="ai-field" style="display:flex;align-items:center;justify-content:space-between">
+                        <label style="margin:0">🫀 BỆNH TIM MẠCH</label>
+                        <label class="pause-toggle"><input type="checkbox" id="ai_cvd"><span
+                                class="pause-toggle-slider"></span></label>
                     </div>
                 </div>
                 <div class="ai-section">
-                    <div class="ai-section-title">TRIỆU CHỨNG LÂM SÀNG LIÊN QUAN (Trong 1 tháng qua)</div>
-                    <div class="ai-field"><label>CÁC TRIỆU CHỨNG CẢNH BÁO TỪ CƠ THỂ</label>
-                        <div class="ai-check-group" id="ai_pain">
-                            <div class="ai-check" data-val="dau_dau" onclick="toggleCheck(this)">🤕 Đau đầu dữ dội không rõ nguyên nhân</div>
-                            <div class="ai-check" data-val="dau_nguc" onclick="toggleCheck(this)">💔 Đau thắt ngực (như bị đè nặng)</div>
-                            <div class="ai-check" data-val="tuc_nguc_trai" onclick="toggleCheck(this)">🫀 Tức ngực trái lan ra cánh tay/cằm</div>
-                            <div class="ai-check" data-val="te_yeu_nua_nguoi" onclick="toggleCheck(this)">🖐️ Tê bì, yếu một bên tay chân đột ngột</div>
-                            <div class="ai-check" data-val="kho_noi" onclick="toggleCheck(this)">🗣 Nói líu nhíu, méo miệng thoáng qua</div>
-                        </div>
-                    </div>
-                    <div class="ai-field"><label>BIỂU HIỆN SINH TỒN BẤT THƯỜNG</label>
-                        <div class="ai-check-group" id="ai_symptom">
-                            <div class="ai-check" data-val="chong_mat" onclick="toggleCheck(this)">🌀 Chóng mặt, xây xẩm mặt mày khi đứng lên</div>
-                            <div class="ai-check" data-val="mo_mat" onclick="toggleCheck(this)">👁️ Đột ngột mờ mắt, mất thị lực tạm thời</div>
-                            <div class="ai-check" data-val="kho_tho" onclick="toggleCheck(this)">😮‍💨 Khó thở, hụt hơi dù không vận động nặng</div>
-                            <div class="ai-check" data-val="tim_dap" onclick="toggleCheck(this)">💓 Tim đập thình thịch, đánh trống ngực</div>
-                            <div class="ai-check" data-val="do_mo_hoi" onclick="toggleCheck(this)">💧 Vã mồ hôi lạnh toàn thân</div>
-                            <div class="ai-check" data-val="mat_ngu" onclick="toggleCheck(this)">🦉 Mất ngủ kinh niên</div>
-                        </div>
-                    </div>
-                    <div class="ai-field"><label>THAY ĐỔI CÂN NẶNG BẤT THƯỜNG (3 tháng qua)</label><select
-                            id="ai_weight_change">
-                            <option value="normal">Bình thường / Ổn định</option>
-                            <option value="gain">Tăng cân nhanh chóng</option>
-                            <option value="loss">Sụt cân không rõ lý do</option>
-                        </select></div>
-                    <div class="ai-field"><label>DẤU HIỆU KHÁC</label><input type="text" id="ai_symptom_other"
-                            placeholder="Ghi chú thêm..."></div>
-                </div>
-                <div class="ai-section">
-                    <div class="ai-section-title">LỐI SỐNG & SINH HOẠT (THÓI QUEN NGỦ)</div>
-                    <div class="ai-field"><label id="lbl_ai_sleep">GIỜ NGỦ MỖI ĐÊM</label><input type="number"
-                            id="ai_sleep" value="7" min="0" max="12" step="0.5"></div>
-                    <div class="ai-field"><label id="lbl_ai_bedtime">THƯỜNG THỨC ĐẾN MẤY GIỜ CHÌM VÀO GIẤC
-                            NGỦ?</label><select id="ai_bedtime">
-                            <option value="21">Rất sớm (Trước 9h tối)</option>
-                            <option value="22">Sớm chuẩn (Từ 9h - 10h tối)</option>
-                            <option value="23">Bình thường (Từ 10h - 11h tối)</option>
-                            <option value="24" selected>Hơi muộn (Từ 11h - 12h đêm)</option>
-                            <option value="1">Muộn (Từ 12h - 1h sáng)</option>
-                            <option value="2">Rất muộn (Từ 2h - 3h sáng)</option>
-                            <option value="4">Cực hạn hoặc ca đêm (Sau 4h sáng / Lịch không cố định)</option>
-                        </select></div>
-                    <div class="ai-field"><label id="lbl_ai_sleep_bad">SỐ NGÀY THIẾU NGỦ / TRẰN TRỌC TRONG
-                            TUẦN</label><input type="number" id="ai_sleep_bad" value="1" min="0" max="7"></div>
-                </div>
-                <div class="ai-section">
-                    <div class="ai-section-title">LỐI SỐNG & SINH HOẠT (ĂN UỐNG & VẬN ĐỘNG)</div>
-                    <div class="ai-field"><label id="lbl_ai_diet">CHẾ ĐỘ MỨC ĐỘ ĂN UỐNG (DINH DƯỠNG TỔNG
-                            THỂ)</label><select id="ai_diet">
-                            <option value="4">Tuyệt vời (Ăn clean, nhiều rau xanh, không đường tinh luyện, không
-                                fastfood)</option>
-                            <option value="2">Rất lành mạnh (Tự nấu, cân bằng các nhóm chất, thỉnh thoảng ăn vặt)
-                            </option>
-                            <option value="1">Tương đối tốt (Hạn chế đồ chiên xào, ăn đủ 3 bữa)</option>
-                            <option value="0" selected>Trung bình (Ăn hàng quán thường xuyên nhưng vẫn có rau)</option>
-                            <option value="-2">Kém (Nhiều đồ chiên, fast food, thiếu hụt vitamin trầm trọng)</option>
-                            <option value="-4">Rất tệ (Gần như chỉ ăn đồ nguội, siêu chế biến, lạm dụng đồ ngọt mạn
-                                tính)</option>
-                            <option value="-3">Ăn kiêng cực đoan (Bỏ bữa thường xuyên, nhịn ăn không khoa học)</option>
-                        </select></div>
-                    <div class="ai-field"><label id="lbl_ai_exercise">MỨC ĐỘ TẬP THỂ DỤC / VẬN ĐỘNG /
-                            TUẦN</label><select id="ai_exercise">
-                            <option value="6">Vận động viên / Chuyên nghiệp (Tập luyện cường độ cao mỗi ngày)</option>
-                            <option value="4">Tuyệt vời (Tập nặng/bài bản 5 - 6 ngày/tuần)</option>
-                            <option value="3" selected>Khá tốt (Tập nhẹ hoặc chạy bộ 3 - 4 ngày/tuần)</option>
-                            <option value="1">Tạm được (Thỉnh thoảng tập 1-2 ngày cuối tuần)</option>
-                            <option value="0">Thất thường (Chỉ dãn cơ nhẹ, tập yoga vài lần mỗi tháng)</option>
-                            <option value="-2">Rất ít (Gần như không vận động, đi bộ rất ngắn)</option>
-                            <option value="-4">Hoàn toàn không bao giờ (Ngồi/Nằm 95% thời gian trong ngày)</option>
-                        </select></div>
-                </div>
-                <div class="ai-section">
-                    <div class="ai-section-title">HÀNH VI RỦI RO KÍCH HOẠT ĐỘT QUỴ</div>
-                    <div class="ai-check-group" id="risk_checks">
-                        <div class="ai-check" data-val="tam_dem" onclick="toggleCheck(this)" style="border-color:#ff6b6b;color:#ff6b6b">🚿 Thường xuyên tắm khuya/nước lạnh</div>
-                        <div class="ai-check" data-val="an_man" onclick="toggleCheck(this)">🧂 Ăn rất mặn (Nhiều muối/nước mắm)</div>
-                        <div class="ai-check" data-val="smoking" onclick="toggleCheck(this)">🚬 Hút thuốc lá / Vape</div>
-                        <div class="ai-check" data-val="alcohol" onclick="toggleCheck(this)">🍺 Rượu bia thường xuyên</div>
-                        <div class="ai-check" data-val="stress" onclick="toggleCheck(this)">😰 Stress áp lực cao</div>
-                        <div class="ai-check" data-val="overwork" onclick="toggleCheck(this)">💼 Làm việc >12h/ngày</div>
-                        <div class="ai-check" data-val="nobreak" onclick="toggleCheck(this)">⚠ Ngồi lì liên tục không đứng dậy</div>
-                        <div class="ai-check" data-val="caffeine" onclick="toggleCheck(this)">☕ >4 ly cà phê/tăng lực một ngày</div>
-                        <div class="ai-check" data-val="insomnia2d" onclick="toggleCheck(this)">🌙 Từng thức trắng cày đêm</div>
-                        <div class="ai-check" data-val="sedentary" onclick="toggleCheck(this)">🪑 Lười vận động (Ngồi 90% thời gian)</div>
-                    </div>
-                </div>
-                <div class="ai-section">
-                    <div class="ai-section-title">MÔ TẢ THÊM (tùy chọn)</div>
-                    <div class="ai-field"><textarea id="ai_extra"
-                            placeholder="VD: Thường ngủ muộn, ít vận động..."></textarea>
+                    <div class="ai-section-title">📝 GHI CHÚ THÊM</div>
+                    <div class="ai-field">
+                        <label>BỆNH NỀN, DỊ ỨNG, TIỀN SỬ GIA ĐÌNH...</label>
+                        <textarea id="ai_notes" rows="3"
+                            placeholder="VD: Cao huyết áp, dị ứng penicillin, gia đình có tiền sử ung thư phổi, hay mất ngủ, stress công việc cao..."
+                            style="width:100%;resize:vertical;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#eee;padding:10px;border-radius:8px;font-family:'Inter',sans-serif;font-size:12px;line-height:1.5"></textarea>
                     </div>
                 </div>
             </div>
-            <div class="ai-footer"><button class="ai-submit" id="aiSubmitBtn" onclick="runAIAnalysis()">🧬 PHÂN TÍCH
+            <div class="ai-footer"><button class="ai-submit" id="aiSubmitBtn" onclick="runLifePredictor()">🧬 PHÂN TÍCH
                     NGAY</button></div>
-            <div class="ai-disclaimer">⚠ Mô phỏng AI — Không phải chẩn đoán y khoa</div>
+            <div class="ai-disclaimer">⚠ Mô phỏng thống kê — Không phải chẩn đoán y khoa</div>
         </div>
+
         <div class="ai-right">
             <div class="ai-right-top">
-                <h3><span class="ai-status-dot" id="aiDot"></span>KẾT QUẢ ĐÁNH GIÁ SỨC KHỎE</h3>
-                <div>
-                    <span style="color:rgba(0,212,180,.3);font-size:9px;letter-spacing:2px;margin-right:15px"
-                        id="aiTimestamp">—</span>
-                    <button onclick="backToAIForm()"
-                        style="background:transparent;border:1px solid rgba(0,212,180,0.3);color:#00d4b4;padding:6px 12px;border-radius:4px;cursor:pointer;font-size:10px;font-family:'Courier New', monospace;letter-spacing:1px;transition:0.2s"
-                        onmouseover="this.style.background='rgba(0,212,180,0.1)'"
-                        onmouseout="this.style.background='transparent'">← QUAY LẠI SỬA</button>
-                </div>
+                <h3><span class="ai-status-dot" id="aiDot"></span>KẾT QUẢ DỰ ĐOÁN</h3>
+                <span style="color:rgba(0,212,180,.3);font-size:9px;letter-spacing:2px" id="aiTimestamp">—</span>
             </div>
             <div class="ai-content" id="aiContent">
-                <div class="ai-idle" style="text-align:center;animation: pulseGlow 3s infinite alternate;">
-                    <style>
-                        @keyframes pulseGlow {
-                            0% {
-                                opacity: 0.8;
-                                filter: drop-shadow(0 0 10px rgba(0, 212, 180, 0.5));
-                            }
-
-                            100% {
-                                opacity: 1;
-                                filter: drop-shadow(0 0 25px rgba(0, 212, 180, 0.9));
-                            }
-                        }
-                    </style>
-                    <div class="idle-ico" style="font-size:50px;margin-bottom:15px;text-shadow:0 0 20px #00d4b4">🧬
-                    </div>
+                <div class="ai-idle" id="aiIdleState">
+                    <div
+                        style="font-size:60px;margin-bottom:15px;text-shadow:0 0 25px #00d4b4;animation:pulseGlow 3s infinite alternate">
+                        🧬</div>
                     <p
-                        style="font-size:11px;color:rgba(0,212,180,0.7);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:15px;font-weight:bold;">
+                        style="font-size:11px;color:rgba(0,212,180,0.7);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:15px;font-weight:bold">
                         Chờ dữ liệu đầu vào...</p>
                     <div
-                        style="background:rgba(0,212,180,0.1);border:1px solid rgba(0,212,180,0.3);padding:15px;border-radius:12px;box-shadow:inset 0 0 20px rgba(0,212,180,0.1), 0 0 15px rgba(0,0,0,0.5)">
+                        style="background:rgba(0,212,180,0.1);border:1px solid rgba(0,212,180,0.3);padding:15px;border-radius:12px">
                         <p style="font-size:14px;color:#eee;line-height:1.6;margin:0">Vui lòng điền thông tin bên trái
                             và nhấn</p>
                         <div
@@ -1028,10 +1073,33 @@
             </div>
         </div>
 
-
+        <!-- AI DOCTOR CHATBOT -->
+        <button class="ai-doc-fab" id="aiDocFab" onclick="toggleAiDoctor()">🩺 Bác Sĩ AI</button>
+        <div class="ai-doc-panel" id="aiDocPanel">
+            <div class="ai-doc-header">
+                <span>🩺 Bác Sĩ AI</span>
+                <button class="ai-doc-close" onclick="toggleAiDoctor()">✕</button>
+            </div>
+            <div class="ai-doc-messages" id="aiDocMessages">
+                <div class="ai-doc-msg bot">
+                    <div class="ai-doc-avatar">🩺</div>
+                    <div class="ai-doc-bubble">Xin chào! Tôi là <strong>Bác Sĩ AI</strong> — trợ lý y tế ảo của bạn.
+                        👋<br><br>Bạn có thể hỏi tôi bất cứ điều gì về sức khỏe, dinh dưỡng, lối sống, hoặc giải thích
+                        thêm về kết quả dự đoán tuổi thọ.<br><br>⚠️ <em>Lưu ý: Tôi chỉ cung cấp thông tin tham khảo,
+                            không thay thế tư vấn y khoa chuyên nghiệp.</em></div>
+                </div>
+            </div>
+            <div class="ai-doc-input-area">
+                <input type="text" id="aiDocInput" placeholder="Hỏi Bác Sĩ AI..."
+                    onkeydown="if(event.key==='Enter')sendAiDocMsg()">
+                <button class="ai-doc-send" onclick="sendAiDocMsg()">➤</button>
+            </div>
+        </div>
     </div>
 
     <!-- SETTINGS -->
+
+
     <div id="settingsScreen" class="screen">
         <div class="sett-panel">
             <div class="sett-h">⚙ CÀI ĐẶT</div>
@@ -1090,7 +1158,7 @@
             </div>
             <div class="sett-acts">
                 <button class="sa-btn pri" onclick="saveSettings()">💾 LƯU CÀI ĐẶT</button>
-                <button class="sa-btn sec" onclick="backToMenu()">← QUAY LẠI</button>
+                <button class="sa-btn sec" onclick="backToMenu()">◄ TRANG CHỦ</button>
             </div>
         </div>
     </div>
@@ -1099,46 +1167,13 @@
     <div class="movl" id="movl">
         <div class="mbox" id="mbox"></div>
     </div>
-    <!-- AI CHAT BOT GLOBALLY AVAILABLE -->
-    <div class="ai-chat-container minimized" id="aiChat" style="display: none;">
-        <div class="ai-chat-header" onclick="toggleChat()">
-            <div class="chat-icon"><i class="fa-solid fa-robot"></i></div>
-            <div class="ai-chat-title">
-                <div class="online-dot"></div>
-                <span style="font-weight:900; letter-spacing:1.5px; text-shadow:0 0 10px #2979ff">BÁC SĨ AI (Mô phỏng)</span>
-            </div>
-            <div style="font-size:10px; opacity:0.6; font-weight:bold; letter-spacing:1px; cursor:pointer"
-                onclick="event.stopPropagation(); toggleChat()">[ THU NHỎ ]</div>
-        </div>
-        <div class="ai-chat-messages" id="aiChatMessages">
-            <div class="chat-msg bot">
-                <b>BÁC SĨ AI</b><br>
-                <div style="background:rgba(255,60,60,0.08);border:1px solid rgba(255,60,60,0.25);border-radius:8px;padding:10px 12px;margin-bottom:10px;font-size:12px;color:#ff8888;line-height:1.5;">
-                    ⚠️ <b>CẢNH BÁO QUAN TRỌNG:</b> Tôi là AI mô phỏng, <b>KHÔNG PHẢI bác sĩ thật</b>. Mọi thông tin tôi cung cấp chỉ mang tính <b>THAM KHẢO</b>, có thể sai hoặc không phù hợp với tình trạng cụ thể của bạn. <b>TUYỆT ĐỐI KHÔNG</b> tự chẩn đoán hoặc tự điều trị dựa trên câu trả lời của AI.
-                </div>
-                Chào bạn! Tôi có thể chia sẻ một số kiến thức y tế cơ bản để bạn <b>tham khảo</b>. Tuy nhiên, xin hãy luôn nhớ:
-                <ul style="margin:8px 0;padding-left:18px;font-size:13px;color:#ccc;line-height:1.6;">
-                    <li>🏥 Khi có triệu chứng bất thường → <b>đến bệnh viện ngay</b></li>
-                    <li>📞 Trường hợp khẩn cấp → gọi <b style="color:#ff4444">115</b></li>
-                    <li>🚫 Không dùng AI thay thế bác sĩ chuyên khoa</li>
-                </ul>
-                Bạn muốn hỏi gì? Tôi sẽ cố gắng chia sẻ trong phạm vi kiến thức tham khảo.
-            </div>
-        </div>
-        <div class="ai-chat-input-area">
-            <input type="text" id="aiChatInput" placeholder="Hỏi về sức khỏe (chỉ mang tính tham khảo)..."
-                onkeypress="if(event.key === 'Enter') sendChatMessage()">
-            <button onclick="sendChatMessage()">GỬI</button>
-        </div>
-        <div class="ai-chat-disclaimer" style="background:rgba(255,0,0,0.06);border-top:1px solid rgba(255,0,0,0.15);color:#ff8888;font-size:11px;padding:8px 12px;text-align:center;line-height:1.4;">⚠️ AI mô phỏng — Không thay thế bác sĩ thật. Luôn tham khảo ý kiến chuyên gia y tế.</div>
-    </div>
 
-    <script src="js/ai_model_data.js"></script>
     <script src="js/data.js"></script>
     <script src="js/story_data.js"></script>
     <script src="js/medical_data.js"></script>
     <script src="js/storyIntro.js"></script>
     <script src="js/game.js"></script>
+
 
 
 

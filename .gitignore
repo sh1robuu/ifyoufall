@@ -1,3 +1,8 @@
 .vercel
 .env*.local
 node_modules
+backend/.env
+*.log
+out.txt
+test_ai_out.txt
+test_screenshot.png

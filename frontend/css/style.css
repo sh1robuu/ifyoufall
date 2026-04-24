@@ -3293,15 +3293,16 @@ input[type=range]::-webkit-slider-thumb:hover {
 .mobile-controls-panel {
     display: none;
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 15px;
     z-index: 6000;
     background: rgba(10, 14, 24, 0.92);
     border: 1.5px solid rgba(0, 212, 180, 0.3);
     border-radius: 14px;
-    padding: 12px;
+    padding: 14px;
     backdrop-filter: blur(15px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 200px;
 }
 
 .mcp-move {
@@ -3320,16 +3321,17 @@ input[type=range]::-webkit-slider-thumb:hover {
 
 .mcp-dpad {
     display: grid;
-    grid-template-columns: repeat(3, 48px);
-    grid-template-rows: repeat(2, 48px);
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(2, 44px);
     gap: 4px;
     justify-items: center;
     align-items: center;
+    justify-content: center;
 }
 
 .mcp-btn {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border: 1.5px solid rgba(0, 212, 180, 0.35);
     background: rgba(0, 212, 180, 0.08);
     color: rgba(255, 255, 255, 0.8);
@@ -3401,6 +3403,33 @@ input[type=range]::-webkit-slider-thumb:hover {
 @media (pointer: fine) and (min-width: 1025px) {
     .mobile-controls-panel {
         display: none !important;
+    }
+}
+
+/* iPad / tablet: larger controls with better spacing */
+@media (pointer: coarse) and (min-width: 768px) {
+    .mobile-controls-panel {
+        bottom: 30px;
+        right: 25px;
+        padding: 16px;
+        max-width: 220px;
+    }
+
+    .mcp-dpad {
+        grid-template-columns: repeat(3, 52px);
+        grid-template-rows: repeat(2, 52px);
+        gap: 5px;
+    }
+
+    .mcp-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    .mcp-act-btn {
+        padding: 12px 8px;
+        font-size: 12px;
     }
 }
 

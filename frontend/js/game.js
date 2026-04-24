@@ -3890,7 +3890,7 @@ async function runLifePredictor() {
 
     btn.disabled = true;
 
-    btn.textContent = 'DANG PHAN TICH...';
+    btn.textContent = 'ĐANG PHÂN TÍCH...';
 
     var left = document.querySelector('.ai-left');
 
@@ -3910,7 +3910,7 @@ async function runLifePredictor() {
 
     var content = document.getElementById('aiContent');
 
-    content.innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:50px;margin-bottom:15px;animation:pulseGlow 2s infinite alternate">&#x1F9EC;</div><p style="color:rgba(0,212,180,0.7);font-size:12px;letter-spacing:2px;text-transform:uppercase">AI dang phan tich du lieu...</p><div style="width:60%;height:3px;background:rgba(0,212,180,0.1);border-radius:2px;margin:20px auto;overflow:hidden"><div style="width:100%;height:100%;background:#00d4b4;animation:loadBar 2s ease infinite"></div></div></div>';
+    content.innerHTML = '<div style="text-align:center;padding:40px 20px"><div style="font-size:50px;margin-bottom:15px;animation:pulseGlow 2s infinite alternate">&#x1F9EC;</div><p style="color:rgba(0,212,180,0.7);font-size:12px;letter-spacing:2px;text-transform:uppercase">AI đang phân tích dữ liệu...</p><div style="width:60%;height:3px;background:rgba(0,212,180,0.1);border-radius:2px;margin:20px auto;overflow:hidden"><div style="width:100%;height:100%;background:#00d4b4;animation:loadBar 2s ease infinite"></div></div></div>';
 
     // Collect form data
 
@@ -4002,16 +4002,7 @@ async function runLifePredictor() {
             });
             if (!resp.ok) throw new Error('Proxy ' + resp.status);
         } catch (proxyErr) {
-            // Try 2: Direct Ollama API
-            resp = await fetch('https://ollama.com/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ec3f2037de924cb9b1101478572cc954.1btunjNfs1Tq7jlzDpTPYzMB'
-                },
-                body: apiBody
-            });
-            if (!resp.ok) throw new Error('API ' + resp.status);
+            throw new Error('API không khả dụng. Vui lòng deploy lên Vercel hoặc kiểm tra proxy /api/predict.');
         }
 
         var data = await resp.json();
@@ -4048,40 +4039,27 @@ async function runLifePredictor() {
 
         var risk = Math.min(100, Math.max(0, Math.round(50 - adj * 2)));
 
-        var bmiCat = bmi < 18.5 ? 'Thieu can' : bmi < 25 ? 'Binh thuong' : bmi < 30 ? 'Thua can' : 'Beo phi';
+        var bmiCat = bmi < 18.5 ? 'Thiếu cân' : bmi < 25 ? 'Bình thường' : bmi < 30 ? 'Thừa cân' : 'Béo phì';
 
-        var fallbackText = '## Ket qua Du doan (Offline)\n\n'
-
-            + '**Tuoi tho uoc tinh:** ' + est.toFixed(1) + ' nam\n\n'
-
-            + '**Diem rui ro:** ' + risk + '/100\n\n'
-
+        var fallbackText = '## Kết quả Dự đoán (Offline)\n\n'
+            + '**Tuổi thọ ước tính:** ' + est.toFixed(1) + ' năm\n\n'
+            + '**Điểm rủi ro:** ' + risk + '/100\n\n'
             + '**BMI:** ' + bmi.toFixed(1) + ' (' + bmiCat + ')\n\n'
-
-            + '### Phan tich:\n'
-
-            + (smoking !== 'none' ? '- Hut thuoc lam giam ' + (smoking === 'heavy' ? '8' : '3') + ' nam tuoi tho\n' : '')
-
-            + (alcohol === 'high' ? '- Uong ruou bia nhieu lam giam 5 nam\n' : '')
-
-            + (exercise === 'low' ? '- It van dong lam giam 3 nam\n' : '')
-
-            + (diabetes ? '- Tieu duong lam giam 5 nam\n' : '')
-
-            + (cvd ? '- Benh tim mach lam giam 7 nam\n' : '')
-
-            + '\n> Day chi la mo hinh thong ke mo phong, khong phai du doan y khoa hoac loi khuyen y te ca nhan.\n'
-
-            + '\n*Luu y: Ket qua tinh offline do khong ket noi duoc AI. Loi: ' + err.message + '*';
+            + '### Phân tích:\n'
+            + (smoking !== 'none' ? '- Hút thuốc làm giảm ' + (smoking === 'heavy' ? '8' : '3') + ' năm tuổi thọ\n' : '')
+            + (alcohol === 'high' ? '- Uống rượu bia nhiều làm giảm 5 năm\n' : '')
+            + (exercise === 'low' ? '- Ít vận động làm giảm 3 năm\n' : '')
+            + (diabetes ? '- Tiểu đường làm giảm 5 năm\n' : '')
+            + (cvd ? '- Bệnh tim mạch làm giảm 7 năm\n' : '')
+            + '\n> Đây chỉ là mô hình thống kê mô phỏng, không phải dự đoán y khoa hoặc lời khuyên y tế cá nhân.\n'
+            + '\n*Lưu ý: Kết quả tính offline do không kết nối được AI. Lỗi: ' + err.message + '*';
 
         showPredictorResult(fallbackText, bmi, age);
 
     }
 
     btn.disabled = false;
-
-    btn.textContent = '\uD83E\uDDEC PHAN TICH NGAY';
-
+    btn.textContent = '🧬 PHÂN TÍCH NGAY';
     _aiPredicting = false;
 
 }
@@ -4090,7 +4068,7 @@ function showPredictorResult(text, bmi, age) {
 
     var content = document.getElementById('aiContent');
 
-    var bmiCat = bmi < 18.5 ? 'Thieu can' : bmi < 25 ? 'Binh thuong' : bmi < 30 ? 'Thua can' : 'Beo phi';
+    var bmiCat = bmi < 18.5 ? 'Thiếu cân' : bmi < 25 ? 'Bình thường' : bmi < 30 ? 'Thừa cân' : 'Béo phì';
 
     var bmiColor = bmi < 18.5 ? '#ffaa00' : bmi < 25 ? '#00d4b4' : bmi < 30 ? '#ff8800' : '#ff4444';
 
@@ -4126,11 +4104,9 @@ function showPredictorResult(text, bmi, age) {
 
         + '<div style="flex:1;min-width:120px;background:rgba(0,212,180,0.08);border:1px solid rgba(0,212,180,0.25);border-radius:12px;padding:16px;text-align:center">'
 
-        + '<div style="font-size:10px;color:rgba(0,212,180,0.6);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">TUOI</div>'
-
+        + '<div style="font-size:10px;color:rgba(0,212,180,0.6);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">TUỔI</div>'
         + '<div style="font-size:28px;font-weight:900;color:#00d4b4">' + age + '</div>'
-
-        + '<div style="font-size:11px;color:rgba(0,212,180,0.5);margin-top:4px">hien tai</div>'
+        + '<div style="font-size:11px;color:rgba(0,212,180,0.5);margin-top:4px">Hiện tại</div>'
 
         + '</div>'
 
@@ -4144,7 +4120,7 @@ function showPredictorResult(text, bmi, age) {
 
         + '<div style="text-align:center;margin-top:20px">'
 
-        + '<button onclick="backToPredictor()" style="background:rgba(0,212,180,0.15);border:1px solid rgba(0,212,180,0.4);color:#00d4b4;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:bold;letter-spacing:1px;transition:all 0.2s" onmouseover="this.style.background=\'rgba(0,212,180,0.25)\'" onmouseout="this.style.background=\'rgba(0,212,180,0.15)\'">&#x2190; QUAY LAI SUA</button>'
+        + '<button onclick="backToPredictor()" style="background:rgba(0,212,180,0.15);border:1px solid rgba(0,212,180,0.4);color:#00d4b4;padding:10px 24px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:bold;letter-spacing:1px;transition:all 0.2s" onmouseover="this.style.background=\'rgba(0,212,180,0.25)\'" onmouseout="this.style.background=\'rgba(0,212,180,0.15)\'">&#x2190; QUAY LẠI SỬA</button>'
 
         + '</div>';
 
@@ -4298,15 +4274,7 @@ async function sendAiDocMsg() {
             });
             if (!resp.ok) throw new Error('Proxy ' + resp.status);
         } catch (e) {
-            resp = await fetch('https://ollama.com/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ec3f2037de924cb9b1101478572cc954.1btunjNfs1Tq7jlzDpTPYzMB'
-                },
-                body: apiBody
-            });
-            if (!resp.ok) throw new Error('API ' + resp.status);
+            throw new Error('API không khả dụng. Vui lòng deploy lên Vercel.');
         }
 
         var data = await resp.json();
