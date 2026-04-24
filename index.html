@@ -589,8 +589,23 @@
                 </div>
             </div>
 
-            <!-- Bottom Left: D-Pad Omitted -->
-            <!-- Bottom Right: Action Button Omitted -->
+            <!-- Mobile Touch Controls (hidden on desktop via CSS) -->
+            <div class="mobile-controls-panel" id="mobileControlsPanel">
+                <div class="mcp-move">
+                    <div class="mcp-label">Di chuyển</div>
+                    <div class="mcp-dpad">
+                        <button class="mcp-btn" id="btnUp">▲</button>
+                        <button class="mcp-btn" id="btnLeft">◄</button>
+                        <button class="mcp-btn mcp-empty"></button>
+                        <button class="mcp-btn" id="btnRight">►</button>
+                        <button class="mcp-btn" id="btnDown">▼</button>
+                    </div>
+                </div>
+                <div class="mcp-actions">
+                    <button class="mcp-act-btn" id="btnInteract">🔄 Tương tác</button>
+                    <button class="mcp-act-btn mcp-menu-btn" id="btnMenu">☰ Menu</button>
+                </div>
+            </div>
         </div>
 
         <div class="road-hazard" id="roadHazard"
@@ -1018,6 +1033,15 @@
                                 class="pause-toggle-slider"></span></label>
                     </div>
                 </div>
+                <div class="ai-section">
+                    <div class="ai-section-title">📝 GHI CHÚ THÊM</div>
+                    <div class="ai-field">
+                        <label>BỆNH NỀN, DỊ ỨNG, TIỀN SỬ GIA ĐÌNH...</label>
+                        <textarea id="ai_notes" rows="3"
+                            placeholder="VD: Cao huyết áp, dị ứng penicillin, gia đình có tiền sử ung thư phổi, hay mất ngủ, stress công việc cao..."
+                            style="width:100%;resize:vertical;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#eee;padding:10px;border-radius:8px;font-family:'Inter',sans-serif;font-size:12px;line-height:1.5"></textarea>
+                    </div>
+                </div>
             </div>
             <div class="ai-footer"><button class="ai-submit" id="aiSubmitBtn" onclick="runLifePredictor()">🧬 PHÂN TÍCH
                     NGAY</button></div>
@@ -1046,6 +1070,29 @@
                             PHÂN TÍCH NGAY</div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- AI DOCTOR CHATBOT -->
+        <button class="ai-doc-fab" id="aiDocFab" onclick="toggleAiDoctor()">🩺 Bác Sĩ AI</button>
+        <div class="ai-doc-panel" id="aiDocPanel">
+            <div class="ai-doc-header">
+                <span>🩺 Bác Sĩ AI</span>
+                <button class="ai-doc-close" onclick="toggleAiDoctor()">✕</button>
+            </div>
+            <div class="ai-doc-messages" id="aiDocMessages">
+                <div class="ai-doc-msg bot">
+                    <div class="ai-doc-avatar">🩺</div>
+                    <div class="ai-doc-bubble">Xin chào! Tôi là <strong>Bác Sĩ AI</strong> — trợ lý y tế ảo của bạn.
+                        👋<br><br>Bạn có thể hỏi tôi bất cứ điều gì về sức khỏe, dinh dưỡng, lối sống, hoặc giải thích
+                        thêm về kết quả dự đoán tuổi thọ.<br><br>⚠️ <em>Lưu ý: Tôi chỉ cung cấp thông tin tham khảo,
+                            không thay thế tư vấn y khoa chuyên nghiệp.</em></div>
+                </div>
+            </div>
+            <div class="ai-doc-input-area">
+                <input type="text" id="aiDocInput" placeholder="Hỏi Bác Sĩ AI..."
+                    onkeydown="if(event.key==='Enter')sendAiDocMsg()">
+                <button class="ai-doc-send" onclick="sendAiDocMsg()">➤</button>
             </div>
         </div>
     </div>
@@ -1131,6 +1178,50 @@
 
 
 
+
+    <!-- PAUSE OVERLAY -->
+    <div class="pause-overlay" id="pauseOverlay">
+        <div class="pause-panel">
+            <div class="pause-title">🎮 TẠM DỪNG</div>
+            <div class="pause-section">
+                <div class="pause-section-title">🔊 Âm thanh</div>
+                <div class="pause-row">
+                    <span>🎵 Nhạc nền</span>
+                    <label class="pause-toggle"><input type="checkbox" id="pause_music" checked
+                            onchange="togglePauseAudio('music')"><span class="pause-toggle-slider"></span></label>
+                </div>
+                <div class="pause-slider-row">
+                    <input type="range" id="pause_music_vol" min="0" max="100" value="70"
+                        oninput="updatePauseVol('music',this.value)">
+                    <span id="pause_music_val">70%</span>
+                </div>
+                <div class="pause-row">
+                    <span>🔈 Hiệu ứng âm</span>
+                    <label class="pause-toggle"><input type="checkbox" id="pause_sfx" checked
+                            onchange="togglePauseAudio('sfx')"><span class="pause-toggle-slider"></span></label>
+                </div>
+                <div class="pause-slider-row">
+                    <input type="range" id="pause_sfx_vol" min="0" max="100" value="70"
+                        oninput="updatePauseVol('sfx',this.value)">
+                    <span id="pause_sfx_val">70%</span>
+                </div>
+            </div>
+            <button class="pause-btn resume-btn" onclick="togglePauseMenu()">► TIẾP TỤC CHƠI</button>
+            <button class="pause-btn quit-btn" onclick="confirmQuitGame()">🚪 THOÁT GAME</button>
+        </div>
+    </div>
+
+    <!-- QUIT CONFIRM OVERLAY -->
+    <div class="quit-confirm-overlay" id="quitConfirmOverlay">
+        <div class="quit-confirm-box">
+            <h3>⚠ Xác nhận thoát</h3>
+            <p>Bạn có chắc muốn thoát? Tiến trình sẽ được lưu tự động.</p>
+            <div class="quit-confirm-btns">
+                <button class="quit-yes" onclick="executeQuit()">Thoát</button>
+                <button class="quit-no" onclick="cancelQuit()">Ở lại</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 

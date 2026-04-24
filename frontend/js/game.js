@@ -693,7 +693,7 @@ function createHeart() {
     container.appendChild(h);
     setTimeout(function () { h.remove(); }, duration * 1000);
 }
-function backToMenu() { SFX.click(); stopAlarm(); stopHeartbeat(); closeM(); cancelAnimationFrame(G._raf); if (typeof PixelIntro !== 'undefined') PixelIntro.destroy(); var ss = document.getElementById('storyScreen'); if (ss) ss.classList.remove('pixel-intro-active'); if (G.scr === 'game' && G.day >= 1 && G.hp > 0) saveGame(); go('menu'); }
+function backToMenu() { SFX.click(); stopAlarm(); stopHeartbeat(); closeM(); cancelAnimationFrame(G._raf); if (typeof PixelIntro !== 'undefined') PixelIntro.destroy(); var ss = document.getElementById('storyScreen'); if (ss) ss.classList.remove('pixel-intro-active'); if (G.scr === 'game' && G.day >= 1 && G.hp > 0) saveGame(); _pauseOpen = false; var po = document.getElementById('pauseOverlay'); if (po) po.classList.remove('active'); var qo = document.getElementById('quitConfirmOverlay'); if (qo) qo.classList.remove('active'); G.timeUpdating = true; go('menu'); }
 
 // ── PAUSE MENU ──────────────────────────────────────────
 var _pauseOpen = false;
@@ -3933,31 +3933,22 @@ async function runLifePredictor() {
     var diabetes = document.getElementById('ai_diabetes').checked;
 
     var cvd = document.getElementById('ai_cvd').checked;
+    var notes = (document.getElementById('ai_notes') || {}).value || '';
 
     var bmi = weight_kg / Math.pow(height_cm / 100, 2);
 
     var userMsg = 'Du lieu nguoi dung:\n'
-
         + '- age: ' + age + '\n'
-
         + '- gender: ' + gender + '\n'
-
         + '- country: ' + country + '\n'
-
         + '- height_cm: ' + height_cm + '\n'
-
         + '- weight_kg: ' + weight_kg + '\n'
-
         + '- smoking_level: ' + smoking + '\n'
-
         + '- alcohol_level: ' + alcohol + '\n'
-
         + '- exercise_level: ' + exercise + '\n'
-
         + '- diabetes: ' + diabetes + '\n'
-
         + '- cardiovascular_disease: ' + cvd + '\n'
-
+        + (notes.trim() ? '- ghi_chu_ca_nhan: ' + notes.trim() + '\n' : '')
         + '\nHay phan tich va tra ve ket qua.';
 
     var systemPrompt = 'Ban la he thong AI mo phong suc khoe va uoc tinh tuoi tho dua tren cac yeu to nhan khau hoc, loi song va chi so suc khoe co ban. Muc tieu la dua ra uoc tinh mang tinh thong ke (khong phai chan doan y khoa), dua tren du lieu y te cong khai tu WHO, World Bank va Global Burden of Disease (IHME).\n\n'
@@ -3983,16 +3974,13 @@ async function runLifePredictor() {
         + 'STEP 4: OUTPUT FORMAT\n'
 
         + '1. estimated_life_expectancy (number, 1 decimal)\n'
-
         + '2. risk_score (0-100, cang cao cang rui ro)\n'
-
         + '3. BMI value + category\n'
-
-        + '4. explanation (3-6 bullet points, tieng Viet)\n\n'
-
+        + '4. explanation (3-6 bullet points, tieng Viet)\n'
+        + '5. Neu nguoi dung co ghi chu ca nhan (benh nen, di ung, tien su gia dinh), hay phan tich va tich hop vao ket qua.\n'
+        + '6. NGUON THONG TIN: Luon ghi ro nguon du lieu duoc su dung de du doan (vi du: WHO Life Tables 2023, World Bank Data, IHME Global Burden of Disease, nghien cuu y khoa cu the). Ghi ro ten nguon + nam xuat ban.\n\n'
         + 'STEP 5: SAFETY NOTE\nLuon them: "Day chi la mo hinh thong ke mo phong, khong phai du doan y khoa hoac loi khuyen y te ca nhan."\n\n'
-
-        + 'OUTPUT STYLE: ngan gon, ro rang, uu tien so lieu + bullet points, khong su dung ngon ngu y khoa phuc tap. Tra loi bang tieng Viet.';
+        + 'OUTPUT STYLE: ngan gon, ro rang, uu tien so lieu + bullet points, khong su dung ngon ngu y khoa phuc tap. Cuoi cung luon co muc "📚 Nguon tham khao" liet ke cac nguon da dung. Tra loi bang tieng Viet.';
 
     try {
         var apiBody = JSON.stringify({
@@ -4247,3 +4235,91 @@ function removePersonalContact(index) {
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeEmergencyModal();
 });
+
+// ── AI DOCTOR CHATBOT ──────────────────────────────────
+var _aiDocOpen = false;
+var _aiDocHistory = [
+    { role: 'system', content: 'Ban la Bac Si AI — tro ly y te ao chuyen ve suc khoe, dinh duong, loi song va phong benh. Tra loi bang tieng Viet, ngan gon, de hieu, than thien. Luon nhac nguoi dung rang ban chi cung cap thong tin tham khao, khong thay the tu van y khoa chuyen nghiep. Neu nguoi dung hoi ve ket qua du doan tuoi tho, hay giai thich cac yeu to anh huong (BMI, hut thuoc, ruou bia, tap the duc, benh nen) va cach cai thien. Tra loi ngan gon 2-4 cau, su dung emoji phu hop.' }
+];
+
+function toggleAiDoctor() {
+    _aiDocOpen = !_aiDocOpen;
+    var panel = document.getElementById('aiDocPanel');
+    var fab = document.getElementById('aiDocFab');
+    if (_aiDocOpen) {
+        panel.classList.add('open');
+        fab.classList.add('hidden');
+        document.getElementById('aiDocInput').focus();
+    } else {
+        panel.classList.remove('open');
+        fab.classList.remove('hidden');
+    }
+}
+
+function appendAiDocMsg(role, text) {
+    var container = document.getElementById('aiDocMessages');
+    var div = document.createElement('div');
+    div.className = 'ai-doc-msg ' + (role === 'user' ? 'user' : 'bot');
+    if (role === 'user') {
+        div.innerHTML = '<div class="ai-doc-bubble">' + text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>';
+    } else {
+        div.innerHTML = '<div class="ai-doc-avatar">🩺</div><div class="ai-doc-bubble">' + text + '</div>';
+    }
+    container.appendChild(div);
+    container.scrollTop = container.scrollHeight;
+    return div;
+}
+
+async function sendAiDocMsg() {
+    var input = document.getElementById('aiDocInput');
+    var msg = input.value.trim();
+    if (!msg) return;
+    input.value = '';
+
+    appendAiDocMsg('user', msg);
+    _aiDocHistory.push({ role: 'user', content: msg });
+
+    // Show typing indicator
+    var typingDiv = appendAiDocMsg('bot', '<em style="color:rgba(0,212,180,0.6)">Đang suy nghĩ...</em>');
+
+    try {
+        var apiBody = JSON.stringify({
+            model: 'gemini-3-flash-preview:cloud',
+            messages: _aiDocHistory,
+            stream: false
+        });
+
+        var resp;
+        try {
+            resp = await fetch('/api/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: apiBody
+            });
+            if (!resp.ok) throw new Error('Proxy ' + resp.status);
+        } catch (e) {
+            resp = await fetch('https://ollama.com/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ec3f2037de924cb9b1101478572cc954.1btunjNfs1Tq7jlzDpTPYzMB'
+                },
+                body: apiBody
+            });
+            if (!resp.ok) throw new Error('API ' + resp.status);
+        }
+
+        var data = await resp.json();
+        var aiText = '';
+        if (data.message && data.message.content) aiText = data.message.content;
+        else if (data.choices && data.choices[0]) aiText = data.choices[0].message.content;
+        else aiText = 'Xin lỗi, tôi không thể trả lời lúc này.';
+
+        _aiDocHistory.push({ role: 'assistant', content: aiText });
+
+        // Replace typing indicator
+        typingDiv.querySelector('.ai-doc-bubble').innerHTML = aiText.replace(/\n/g, '<br>');
+    } catch (err) {
+        typingDiv.querySelector('.ai-doc-bubble').innerHTML = '⚠️ Không thể kết nối AI. Vui lòng thử lại sau.<br><small style="color:#ff6b6b">' + err.message + '</small>';
+    }
+}
